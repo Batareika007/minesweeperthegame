@@ -1,0 +1,16 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-width: 3px;
+    border-style: solid;
+    border-top-color: #7B7B7B;
+    border-left-color: #7B7B7B;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+    margin-bottom: 10px;
+}
+.header__part{
+   display: flex;
+}

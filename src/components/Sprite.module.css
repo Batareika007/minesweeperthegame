@@ -1,46 +1,6 @@
-body {
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-		'Helvetica Neue', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-  background: #C0C0C0;
-}
-
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-		monospace;
-}
-
-.main {
-	background: #C0C0C0;
-	display: block;
-	width: 278px;
-	padding: 8px;
-	margin: 0 auto;
-  border-width: 3px;
-  border-style: solid;
-  border-top-color: #fff;
-  border-left-color: #fff;
-  border-bottom-color: #7B7B7B;
-  border-right-color: #7B7B7B;
-}
-
-.board{
-  border-width: 3px;
-  border-style: solid;
-  border-top-color: #7B7B7B;
-  border-left-color: #7B7B7B;
-  border-bottom-color: #fff;
-  border-right-color: #fff;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 .sprite {
 	display: inline-block;
-	background-image: url(../public/img/sprite.png);
+	background-image: url(../../public/img/sprite.png);
 	cursor: pointer;
 }
 .sprite_num_size {
@@ -120,7 +80,7 @@ code {
 .sprite_mine_question_pressed{
     background-position: -68px -50px;
 }
-.sprite_mine_show{
+.sprite_mine{
     background-position: -85px -50px;
 }
 .sprite_mine_red{
