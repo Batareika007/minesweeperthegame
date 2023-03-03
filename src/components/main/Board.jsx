@@ -1,5 +1,5 @@
 import React from 'react'
-import EmptyMine from './EmptyMine'
+import Cell from './Cell'
 import MineShow from './MineShow'
 
 const arr = []
@@ -7,7 +7,7 @@ function addDiv() {
 	for (let i = 0; i < 256; i++) {
 		arr.push(i)
 	}
-	console.log(arr)
+	// console.log(arr)
 	return arr
 }
 addDiv()
@@ -28,22 +28,34 @@ const addRundomMines = () => {
 			i++
 		}
 	}
-	console.log(minesId)
+	// console.log(minesId)
 }
 addRundomMines()
 
 function Board() {
+	let styleName = 'sprite_colored_1'
+	const BoardReady = arr.map((i) => { 
+		if (i <= 15) {
+			return <Cell style={styleName} />
+		}
+		if (minesId.includes(i)) {
+			// console.log(`${i} got mine`)
+			return <MineShow key={i} hasMine id={i} />
+		}
+		return <Cell key={i} id={i} />
+	})
 
 	return (
-		<div className='board'>
-			{arr.map((i) => {
-				if (minesId.includes(i)) {
-					// console.log(`${i} got mine`)
-					return <MineShow key={i} id={i} />
-				}
-				return <EmptyMine key={i} id={i}  />
-			})}
-		</div>
+		// <div className='board'>
+		// 	{arr.map((i) => {
+		// 		if (minesId.includes(i)) {
+		// 			// console.log(`${i} got mine`)
+		// 			return <MineShow key={i} id={i} />
+		// 		}
+		// 		return <Cell key={i} id={i} />
+		// 	})}
+		// </div>
+		<div className='board'>{BoardReady}</div>
 	)
 }
 

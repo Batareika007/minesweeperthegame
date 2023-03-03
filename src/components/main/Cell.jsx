@@ -1,6 +1,6 @@
 // import s from '../../components/Sprite.module.css'
 
-function EmptyMine({id, numberOfMinesAround}) {
+function Cell({ id, style = '' }) {
 	const rightClick = (e) => {
 		const { target } = e
 		e.preventDefault()
@@ -12,6 +12,7 @@ function EmptyMine({id, numberOfMinesAround}) {
 			target.classList.remove('sprite_mine_empty_pressed')
 			target.classList.add('sprite_mine_empty')
 		} else {
+			// добавить флаг
 			target.classList.add('sprite_mine_flag')
 		}
 	}
@@ -19,22 +20,22 @@ function EmptyMine({id, numberOfMinesAround}) {
 	const handleClick = ({ target }) => {
 		const isFlag = target.classList.contains('sprite_mine_flag')
 		const isQuestion = target.classList.contains('sprite_mine_question')
-		// if (isFlag || isQuestion) {
-		// 	return
-		// } else {
+		if (isFlag || isQuestion) {
+			return
+		} else {
 			target.classList.remove('sprite_mine_empty')
 			target.classList.add('sprite_mine_empty_pressed')
 			console.log(`clicked ${id} cell`)
-			// console.log()
-		// }
+		}
 	}
-
 	return (
 		<div
-			className='sprite sprite_mine_size sprite_mine_empty'
+			className={`sprite sprite_mine_size sprite_mine_empty ${style}`}
 			onClick={handleClick}
-			onContextMenu={rightClick}></div>
+			onContextMenu={rightClick}>
+				
+			</div>
 	)
 }
 
-export default EmptyMine
+export default Cell
