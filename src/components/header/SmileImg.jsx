@@ -1,10 +1,9 @@
 import React from 'react'
 
-function SmileImg() {
+function SmileImg({ smileMood }) {
 	return (
 		<div className='header__part'>
-			<div
-				className={`sprite sprite_smile_size sprite_smile_regular`}></div>
+			<div className={`sprite sprite_smile_size ${smileMood}`}></div>
 		</div>
 	)
 }
