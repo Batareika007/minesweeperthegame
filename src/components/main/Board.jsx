@@ -1,6 +1,5 @@
 import React from 'react'
 import Cell from './Cell'
-import MineShow from './MineShow'
 
 const arr = []
 function addDiv() {
@@ -32,31 +31,25 @@ const addRundomMines = () => {
 }
 addRundomMines()
 
-function Board() {
-	let styleName = 'sprite_colored_1'
-	const BoardReady = arr.map((i) => { 
-		if (i <= 15) {
-			return <Cell key={i} style={styleName} />
-		}
-		if (minesId.includes(i)) {
-			// console.log(`${i} got mine`)
-			return <MineShow key={i} hasMine id={i} />
-		}
-		return <Cell key={i} id={i} />
-	})
 
-	return (
-		// <div className='board'>
-		// 	{arr.map((i) => {
-		// 		if (minesId.includes(i)) {
-		// 			// console.log(`${i} got mine`)
-		// 			return <MineShow key={i} id={i} />
-		// 		}
-		// 		return <Cell key={i} id={i} />
-		// 	})}
-		// </div>
-		<div className='board'>{BoardReady}</div>
-	)
+
+function Board({onClickFun}) {
+	const BoardReady = arr.map((i) => {
+		if (minesId.includes(i)) {
+			
+			return (
+				<Cell
+					key={i}
+					hasMine
+					id={i}
+					// style={'sprite_mine_empty'}
+					style={'sprite_mine_show'}
+				/>
+			)
+		}
+		return <Cell key={i} id={i} hasMine={false} hasFlag={false} number={false} />
+	})
+	return <div className='board'>{BoardReady}</div>
 }
 
 export default Board
