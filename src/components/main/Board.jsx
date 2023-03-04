@@ -36,7 +36,7 @@ function Board() {
 	let styleName = 'sprite_colored_1'
 	const BoardReady = arr.map((i) => { 
 		if (i <= 15) {
-			return <Cell style={styleName} />
+			return <Cell key={i} style={styleName} />
 		}
 		if (minesId.includes(i)) {
 			// console.log(`${i} got mine`)

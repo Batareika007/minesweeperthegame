@@ -1,6 +1,6 @@
 // import s from '../../components/Sprite.module.css'
 
-function Cell({ id, style = '' }) {
+function Cell({ id, style = 'sprite_mine_empty', hasFlag, number }) {
 	const rightClick = (e) => {
 		const { target } = e
 		e.preventDefault()
@@ -30,11 +30,9 @@ function Cell({ id, style = '' }) {
 	}
 	return (
 		<div
-			className={`sprite sprite_mine_size sprite_mine_empty ${style}`}
+			className={`sprite sprite_mine_size ${style}`}
 			onClick={handleClick}
-			onContextMenu={rightClick}>
-				
-			</div>
+			onContextMenu={rightClick}></div>
 	)
 }
 
