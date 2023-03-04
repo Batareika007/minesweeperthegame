@@ -5,7 +5,7 @@ body {
 		'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-  background: #C0C0C0;
+	background: #c0c0c0;
 }
 
 code {
@@ -13,174 +13,82 @@ code {
 		monospace;
 }
 
-button{
-    border: none;
-    outline: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px;
+	border-width: 3px;
+	border-style: solid;
+	border-top-color: #7b7b7b;
+	border-left-color: #7b7b7b;
+	border-bottom-color: #fff;
+	border-right-color: #fff;
+	margin-bottom: 10px;
 }
-
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    border-width: 3px;
-    border-style: solid;
-    border-top-color: #7B7B7B;
-    border-left-color: #7B7B7B;
-    border-bottom-color: #fff;
-    border-right-color: #fff;
-    margin-bottom: 10px;
-}
-.header__part{
-   display: flex;
+.header__part {
+	display: flex;
 }
 
 .main {
-	background: #C0C0C0;
+	background: #c0c0c0;
 	display: block;
 	width: 278px;
 	padding: 8px;
 	margin: 0 auto;
-  border-width: 3px;
-  border-style: solid;
-  border-top-color: #fff;
-  border-left-color: #fff;
-  border-bottom-color: #7B7B7B;
-  border-right-color: #7B7B7B;
+	border-width: 3px;
+	border-style: solid;
+	border-top-color: #fff;
+	border-left-color: #fff;
+	border-bottom-color: #7b7b7b;
+	border-right-color: #7b7b7b;
 }
 
-.board{
-  border-width: 3px;
-  border-style: solid;
-  border-top-color: #7B7B7B;
-  border-left-color: #7B7B7B;
-  border-bottom-color: #fff;
-  border-right-color: #fff;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.board {
+	border-width: 3px;
+	border-style: solid;
+	border-top-color: #7b7b7b;
+	border-left-color: #7b7b7b;
+	border-bottom-color: #fff;
+	border-right-color: #fff;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 .sprite {
-	display: inline-block;
+	display: block;
 	background-image: url(../public/img/sprite.png);
 	cursor: pointer;
 }
-.sprite_num_size {
-	height: 23px;
-	width: 13px;
-}
-.sprite_num1 {
-	background-position: 0 0;
-}
-.sprite_num2 {
-	background-position: -14px 0;
-}
-.sprite_num3 {
-	background-position: -28px 0;
-}
-.sprite_num4 {
-	background-position: -42px 0;
-}
-.sprite_num5 {
-	background-position: -56px 0;
-}
-.sprite_num6 {
-	background-position: -70px 0;
-}
-.sprite_num7 {
-	background-position: -84px 0;
-}
-.sprite_num8 {
-	background-position: -98px 0;
-}
-.sprite_num9 {
-	background-position: -112px 0;
-}
-.sprite_num0 {
-	background-position: 100% 0;
+
+
+
+.sprite_colored_num_size {
+	width: 17px;
+	height: 17px;
 }
 
-.sprite_smile_size {
-	width: 27px;
-	height: 26px;
+.sprite_colored_1 {
+	background-position: 0 17px;
 }
-
-.sprite_smile_regular {
-	background-position: 0 -24px;
+.sprite_colored_2 {
+	background-position: -17px 17px;
 }
-.sprite_smile_regular_pressed {
-	background-position: -27px -24px;
+.sprite_colored_3 {
+	background-position: -34px 17px;
 }
-.sprite_smile_exciting {
-	background-position: -54px -24px;
+.sprite_colored_4 {
+	background-position: -51px 17px;
 }
-.sprite_smile_cool {
-	background-position: -81px -24px;
+.sprite_colored_5 {
+	background-position: -68px 17px;
 }
-.sprite_smile_dead {
-	background-position: -108px -24px;
+.sprite_colored_6 {
+	background-position: -85px 17px;
 }
-
-.sprite_mine_size{
-    width: 17px;
-    height: 17px;
+.sprite_colored_7 {
+	background-position: -102px 17px;
 }
-
-.sprite_mine_empty{
-    background-position: 0 -50px;
-}
-
-.sprite_mine_empty_pressed{
-    background-position: -17px -50px;
-}
-.sprite_mine_flag{
-    background-position: -34px -50px;
-}
-.sprite_mine_question{
-    background-position: -51px -50px;
-}
-.sprite_mine_question_pressed{
-    background-position: -68px -50px;
-}
-.sprite_mine_show{
-    background-position: -85px -50px;
-}
-.sprite_mine_red{
-    background-position: -102px -50px;
-}
-.sprite_mine_crossed{
-    background-position: -119px -50px;
-}
-
-.sprite_colored_num_size{
-    width: 17px;
-    height: 17px;
-}
-
-.sprite_colored_1{
-    background-position: 0 17px;
-}
-.sprite_colored_2{
-    background-position: -17px 17px;
-}
-.sprite_colored_3{
-    background-position: -34px 17px;
-}
-.sprite_colored_4{
-    background-position: -51px 17px;
-}
-.sprite_colored_5{
-    background-position: -68px 17px;
-}
-.sprite_colored_6{
-    background-position: -85px 17px;
-}
-.sprite_colored_7{
-    background-position: -102px 17px;
-}
-.sprite_colored_8{
-    background-position: -119px 17px;
+.sprite_colored_8 {
+	background-position: -119px 17px;
 }

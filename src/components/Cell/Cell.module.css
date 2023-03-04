@@ -1,0 +1,30 @@
+.size {
+	width: 17px;
+	height: 17px;
+}
+
+.empty {
+	background-position: 0 -50px;
+}
+
+.emptyPressed {
+	background-position: -17px -50px;
+}
+.flag {
+	background-position: -34px -50px;
+}
+.question {
+	background-position: -51px -50px;
+}
+.questionPressed {
+	background-position: -68px -50px;
+}
+.mineShow {
+	background-position: -85px -50px;
+}
+.mineRed {
+	background-position: -102px -50px;
+}
+.mineCrossed {
+	background-position: -119px -50px;
+}

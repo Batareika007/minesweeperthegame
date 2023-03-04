@@ -1,0 +1,19 @@
+.size {
+	width: 27px;
+	height: 26px;
+}
+.regular {
+	background-position: 0 -24px;
+}
+.regularPressed {
+	background-position: -27px -24px;
+}
+.exciting {
+	background-position: -54px -24px;
+}
+.cool {
+	background-position: -81px -24px;
+}
+.dead {
+	background-position: -108px -24px;
+}
