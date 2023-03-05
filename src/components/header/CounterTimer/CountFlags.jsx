@@ -1,5 +1,5 @@
 import style from './Count.module.css'
-export function CountTimer({ num, num2, num3 }) {
+export function CountFlags({ num, num2, num3 }) {
 	const numbersCount = [
 		style.num0,
 		style.num1,
@@ -13,9 +13,9 @@ export function CountTimer({ num, num2, num3 }) {
 		style.num9,
 	]
 
-
 	return (
 		<div>
+			
 			<div className={`${numbersCount[num]} ${style.size}`}></div>
 			<div className={`${numbersCount[num2]} ${style.size}`}></div>
 			<div className={`${numbersCount[num3]} ${style.size}`}></div>

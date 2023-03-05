@@ -1,7 +1,8 @@
 .PlayArea {
 	background: #c0c0c0;
 	display: block;
-	width: 300px;
+	flex: 0 0 300px;
+	/* width: 300px; */
 	min-height: 350px;
 	padding: 8px;
 	margin: 0 auto;

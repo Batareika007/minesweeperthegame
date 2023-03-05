@@ -1,8 +1,27 @@
 import style from './Smile.module.css'
-export function SmileBtn({clickSmile}) {
+import { useState } from 'react'
+
+export function SmileBtn({ createNewBoard}) {
+	const [smileMood, setSmileMood] = useState(style.regular)
+
+	function clickSmile2() {
+		return setSmileMood(style.regular)
+	}
+	
+	function clickedSmile() {
+		return setSmileMood(style.regularPressed)
+	}
+
+
 	return (
-		<div>
-			<div className={`sprite ${style.size} ${style.regular}`} onClick={clickSmile} ></div>
-		</div>
+			<div
+				className={`${style.size} ${smileMood}`}
+				onClick={() => {
+					clickSmile2()
+					createNewBoard()
+				}}
+				onMouseDown={clickedSmile}
+				></div>
+		
 	)
 }

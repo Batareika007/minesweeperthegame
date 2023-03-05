@@ -1,6 +1,7 @@
 import style from './Cell.module.css'
 
 export function Cell({ id, hasMine, data }) {
+
 	const rightClick = (e) => {
 		const { target } = e
 		e.preventDefault()
@@ -26,7 +27,7 @@ export function Cell({ id, hasMine, data }) {
 		} else if (hasMine) {
 			target.classList.remove(style.empty)
 			target.classList.add(style.mineRed)
-			//TODO gameover !
+			//TODO gameover - smile dead
 		} else {
 			switch (data) {
 				case 0:
@@ -63,33 +64,22 @@ export function Cell({ id, hasMine, data }) {
 		}
 	}
 
-	const mouseDowun = ({ target }) => {
-		if (target.classList.contains(style.question)) {
-			target.classList.add(style.questionPressed)
-		} else {
-			target.classList.add(style.emptyPressed)
-		}
+	const mouseDown = ({target}) => {
+		target.classList.add(style.emptyPressed)
+		// TODO - change smile to exciting
 	}
-	const mouseUp = ({ target }) => {
-		target.classList.remove(style.emptyPressed)
-		if (target.classList.contains(style.question)) {
-			target.classList.remove(style.questionPressed)
-		}
-	}
-	const mouseLeave = ({ target }) => {
-		if (target.classList.contains(style.question)) {
-			target.classList.remove(style.questionPressed)
-		}
+	const mouseLeave = ({target}) => {
 		target.classList.remove(style.emptyPressed)
 	}
+
+
 
 	return (
 		<div
 			className={`${style.empty} ${style.size}`}
 			onClick={leftClick}
 			onContextMenu={rightClick}
-			onMouseDown={mouseDowun}
-			onMouseUp={mouseUp}
+			onMouseDown={mouseDown}
 			onMouseLeave={mouseLeave}
 			data={data}></div>
 	)
