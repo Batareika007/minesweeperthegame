@@ -1,14 +1,13 @@
 import React from 'react'
-import {CountTimer} from './CounterTimer/CountTimer'
+import style from './Header.module.css'
+import { CountTimer } from './CounterTimer/CountTimer'
 import { SmileBtn } from './SmileBtn'
 
-
-
-export const Header = () => {
+export const Header = ({ clickSmile }) => {
 	return (
-		<div className='header'>
-			<CountTimer num={0} num2={4} num3={0}/>
-			<SmileBtn/>
+		<div className={style.header}>
+			<CountTimer num={0} num2={4} num3={0} />
+			<SmileBtn clickSmile={clickSmile} />
 			<CountTimer num={0} num2={4} num3={0} />
 		</div>
 	)

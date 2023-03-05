@@ -1,14 +1,23 @@
 import { Header } from './components/Header'
 import { Board } from './components/Board'
-// import { Cell } from './components/Cell'
-import { BoardReady } from './components/utils/generateCells'
+import style from './App.module.css'
+import { CreateBoard } from './components/utils/generateCells'
+import { useState } from 'react'
 
 function App() {
+	const [board, setBoard] = useState(CreateBoard())
 
+	function newBoard() {
+		// setBoard(CreateBoard)
+		setBoard()
+		setTimeout(() => {
+			setBoard(CreateBoard)
+		}, 0)
+	}
 	return (
-		<div className='main'>
-			<Header />
-			<Board createBoard={BoardReady} />
+		<div className={style.PlayArea}>
+			<Header clickSmile={newBoard} />
+			<Board createBoard={board} />
 		</div>
 	)
 }

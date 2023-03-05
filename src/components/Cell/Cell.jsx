@@ -17,7 +17,8 @@ export function Cell({ id, hasMine, data }) {
 		}
 	}
 
-	const handleClick = ({ target }) => {
+	const leftClick = (e) => {
+		const { target } = e
 		const isFlag = target.classList.contains(style.flag)
 		const isQuestion = target.classList.contains(style.question)
 		if (isFlag || isQuestion) {
@@ -25,54 +26,71 @@ export function Cell({ id, hasMine, data }) {
 		} else if (hasMine) {
 			target.classList.remove(style.empty)
 			target.classList.add(style.mineRed)
+			//TODO gameover !
 		} else {
 			switch (data) {
 				case 0:
 					target.classList.add(style.num0)
-					break;
+					break
 				case 1:
 					target.classList.add(style.num1)
-					break;
+					break
 				case 2:
 					target.classList.add(style.num2)
-					break;
+					break
 				case 3:
 					target.classList.add(style.num3)
-					break;
+					break
 				case 4:
 					target.classList.add(style.num4)
-					break;
+					break
 				case 5:
 					target.classList.add(style.num5)
-					break;
+					break
 				case 6:
 					target.classList.add(style.num6)
-					break;
+					break
 				case 7:
 					target.classList.add(style.num7)
-					break;
+					break
 				case 8:
 					target.classList.add(style.num8)
-					break;
+					break
 
 				default:
 					break
 			}
-			// if(data === 0 ){
-			// 	target.classList.add(style.num0)
-			// }
-			// if(data === 1 ){
-			// 	target.classList.add(style.num1)
-			// }
-			target.classList.remove(style.empty)
 		}
+	}
+
+	const mouseDowun = ({ target }) => {
+		if (target.classList.contains(style.question)) {
+			target.classList.add(style.questionPressed)
+		} else {
+			target.classList.add(style.emptyPressed)
+		}
+	}
+	const mouseUp = ({ target }) => {
+		target.classList.remove(style.emptyPressed)
+		if (target.classList.contains(style.question)) {
+			target.classList.remove(style.questionPressed)
+		}
+	}
+	const mouseLeave = ({ target }) => {
+		if (target.classList.contains(style.question)) {
+			target.classList.remove(style.questionPressed)
+		}
+		target.classList.remove(style.emptyPressed)
 	}
 
 	return (
 		<div
-			className={`sprite ${style.size} ${style.empty}`}
-			onClick={handleClick}
+			className={`${style.empty} ${style.size}`}
+			onClick={leftClick}
 			onContextMenu={rightClick}
+			onMouseDown={mouseDowun}
+			onMouseUp={mouseUp}
+			onMouseLeave={mouseLeave}
 			data={data}></div>
 	)
 }

@@ -13,7 +13,7 @@ export function CountTimer({ num, num2, num3 }) {
 		style.num9,
 	]
 	return (
-		<div className='header__part'>
+		<div>
 			<div className={`${numbersCount[num]} ${style.size} sprite`}></div>
 			<div className={`${numbersCount[num2]} ${style.size} sprite`}></div>
 			<div className={`${numbersCount[num3]} ${style.size} sprite`}></div>

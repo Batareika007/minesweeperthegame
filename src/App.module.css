@@ -1,0 +1,14 @@
+.PlayArea {
+	background: #c0c0c0;
+	display: block;
+	width: 300px;
+	min-height: 350px;
+	padding: 8px;
+	margin: 0 auto;
+	border-width: 3px;
+	border-style: solid;
+	border-top-color: #fff;
+	border-left-color: #fff;
+	border-bottom-color: #7b7b7b;
+	border-right-color: #7b7b7b;
+}

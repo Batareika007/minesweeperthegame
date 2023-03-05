@@ -1,3 +1,4 @@
+import style from './Board.module.css'
 export function Board({ createBoard }) {
-	return <div className='board'>{createBoard}</div>
+	return <div className={style.Board}>{createBoard}</div>
 }

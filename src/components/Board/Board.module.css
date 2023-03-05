@@ -1,0 +1,11 @@
+.Board {
+	border-width: 3px;
+	border-style: solid;
+	border-top-color: #7b7b7b;
+	border-left-color: #7b7b7b;
+	border-bottom-color: #fff;
+	border-right-color: #fff;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}

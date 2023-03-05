@@ -1,6 +1,9 @@
 .size {
 	height: 23px;
 	width: 13px;
+	display: inline-block;
+	background-image: url(/public/img/sprite.png);
+	cursor: pointer;
 }
 .num1 {
 	background-position: 0 0;

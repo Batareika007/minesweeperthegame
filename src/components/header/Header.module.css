@@ -1,0 +1,13 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px;
+	border-width: 3px;
+	border-style: solid;
+	border-top-color: #7b7b7b;
+	border-left-color: #7b7b7b;
+	border-bottom-color: #fff;
+	border-right-color: #fff;
+	margin-bottom: 10px;
+}

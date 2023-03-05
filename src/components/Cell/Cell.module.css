@@ -1,6 +1,9 @@
 .size {
 	width: 17px;
 	height: 17px;
+	 /* display: block; */
+	cursor: pointer; 
+	background-image: url(/public/img/sprite.png);
 }
 
 .empty {
