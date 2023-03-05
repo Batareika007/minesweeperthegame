@@ -1,37 +1,6 @@
 import style from './Cell.module.css'
 
 export function Cell({ id, hasMine, data }) {
-	function checkEachCells(id) {
-		const top = `${id - 17} ${id - 16} ${id - 15}`
-		const left = `${id - 17} ${id - 1} ${id + 15}`
-		const right = `${id - 15} ${id + 1} ${id + 17}`
-		const bottom = `${id + 15} ${id + 16} ${id + 17}`
-		const all = `${id - 17} ${id - 16} ${id - 15} ${id + 1} ${id + 17} ${
-			id + 16
-		} ${id + 15} ${id - 1} `
-		console.log(`I clicked ${id}`)
-		// let countMines = 0
-		if (id === 0) {
-			console.log(`check ${id + 1} ${id + 17} ${id + 16} cells`)
-		} else if (id === 15) {
-			console.log(`check ${id - 1} ${id + 15} ${id + 16} cells`)
-		} else if (id === 240) {
-			console.log(`check ${id - 16} ${id - 15} ${id + 1} cells`)
-		} else if (id === 255) {
-			console.log(`check ${id - 16} ${id - 17} ${id - 1} cells`)
-		} else if (id <= 15) {
-			console.log(`check ${bottom} ${id - 1} ${id + 1} cells`)
-		} else if (id >= 240) {
-			console.log(`check ${top} ${id - 1} ${id + 1} cells`)
-		} else if (id % 16 === 0) {
-			console.log(`check ${right} ${id - 16} ${id + 16} cells`)
-		} else if (id % 16 === 15) {
-			console.log(`check ${left} ${id - 17} ${id + 15} cells `)
-		} else {
-			console.log(`check ${all} cells`)
-		}
-	}
-
 	const rightClick = (e) => {
 		const { target } = e
 		e.preventDefault()
@@ -57,9 +26,45 @@ export function Cell({ id, hasMine, data }) {
 			target.classList.remove(style.empty)
 			target.classList.add(style.mineRed)
 		} else {
+			switch (data) {
+				case 0:
+					target.classList.add(style.num0)
+					break;
+				case 1:
+					target.classList.add(style.num1)
+					break;
+				case 2:
+					target.classList.add(style.num2)
+					break;
+				case 3:
+					target.classList.add(style.num3)
+					break;
+				case 4:
+					target.classList.add(style.num4)
+					break;
+				case 5:
+					target.classList.add(style.num5)
+					break;
+				case 6:
+					target.classList.add(style.num6)
+					break;
+				case 7:
+					target.classList.add(style.num7)
+					break;
+				case 8:
+					target.classList.add(style.num8)
+					break;
+
+				default:
+					break
+			}
+			// if(data === 0 ){
+			// 	target.classList.add(style.num0)
+			// }
+			// if(data === 1 ){
+			// 	target.classList.add(style.num1)
+			// }
 			target.classList.remove(style.empty)
-			target.classList.add(style.emptyPressed)
-			checkEachCells(id)
 		}
 	}
 
@@ -68,6 +73,6 @@ export function Cell({ id, hasMine, data }) {
 			className={`sprite ${style.size} ${style.empty}`}
 			onClick={handleClick}
 			onContextMenu={rightClick}
-			value={data}></div>
+			data={data}></div>
 	)
 }

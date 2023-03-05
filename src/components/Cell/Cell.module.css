@@ -28,3 +28,31 @@
 .mineCrossed {
 	background-position: -119px -50px;
 }
+
+.num0 {
+	background-position: -17px -50px;
+}
+.num1 {
+	background-position: 0 17px;
+}
+.num2 {
+	background-position: -17px 17px;
+}
+.num3 {
+	background-position: -34px 17px;
+}
+.num4 {
+	background-position: -51px 17px;
+}
+.num5 {
+	background-position: -68px 17px;
+}
+.num6 {
+	background-position: -85px 17px;
+}
+.num7 {
+	background-position: -102px 17px;
+}
+.num8 {
+	background-position: -119px 17px;
+}
